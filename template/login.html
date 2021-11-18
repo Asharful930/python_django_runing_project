@@ -1,0 +1,67 @@
+{% extends "loyout.html" %}
+
+{% block titile %}
+Login page
+{% endblock titile %}
+{% load static %}
+
+{% block content %}
+
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="{% static 'css/style1.css' %}" rel="stylesheet">
+</head>
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 class="text-center">Login your Account</h2>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="row mt-5 justify-content-center" data-aos="fade-up">
+          <div class="col-lg-4">
+          
+              <form action="" method="post">
+              {% csrf_token %}
+                <div class="imgcontainer">
+                  <img src="{% static 'img/cn.jpg' %}" alt="Avatar" class="avatar">
+                </div>
+
+                <div class="container">
+                  <label for="username"><b>Username</b></label>
+                  <input type="text" placeholder="Enter Username" name="username" required>
+
+                  <label for="password"><b>Password</b></label>
+                  <input type="password" placeholder="Enter Password" name="password" required>
+
+                  <button type="submit">Login</button>
+                  <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                  </label>
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1">
+                  <span ><a href="{% url 'regstions' %}">sing up</a></span>
+                  <span class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+              </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+{% endblock content %}
